@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>
-        Wybierz plik do weryfikacji
+        Wybierz plik do weryfikacji - AWS::IAM::Role Policy
     </h1>
     <form id="fileForm" enctype="multipart/form-data">
         <input type="file" id="fileInput" name="fileInput">
@@ -38,11 +38,12 @@
                         throw new Error('Wystąpił problem podczas przesyłania pliku JSON.');
                     })
                     .then(data => {
-                        console.log(data)
-                        document.getElementById('response').innerText = data.valid ? data.valid : data.valid + ", " + data.error;
+                        let responseDiv = document.getElementById('response');
+                        responseDiv.innerText = data.valid ? data.valid : data.valid + ", " + data.error;
+                        responseDiv.className = data.valid ? 'valid' : 'invalid';
                     })
                     .catch(error => {
-                        // alert(error);
+                        alert(error);
                     });
             } else {
                 alert('Proszę wybrać plik JSON do przesłania.');

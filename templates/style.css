@@ -41,3 +41,20 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+#response {
+    width: 60%;
+    margin: 2rem auto auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: x-large;
+}
+
+.valid {
+    background-color: rgba(144, 238, 144, 0.6);
+}
+
+.invalid {
+    background-color: rgba(255, 76, 48, 0.6);
+}
+

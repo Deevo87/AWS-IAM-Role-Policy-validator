@@ -3,7 +3,6 @@ package app
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"mime/multipart"
 	"zadanie_remitly/app/structures"
 	"zadanie_remitly/app/validators"
@@ -19,7 +18,6 @@ func NewValidatorService() *ValidatorService {
 func (v *ValidatorService) Validate(file multipart.File) (bool, error) {
 	var policy structures.Policy
 	err := json.NewDecoder(file).Decode(&policy)
-	fmt.Println(policy)
 	if err != nil {
 		return false, errors.New("not valid JSON structure")
 	}
