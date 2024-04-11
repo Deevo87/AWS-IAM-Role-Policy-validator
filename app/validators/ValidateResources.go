@@ -38,10 +38,8 @@ func (v *ValidateResources) Execute(policy structures.Policy, ind int) (bool, er
 }
 
 func (v *ValidateResources) checkForAsterisk(element string) (bool, error) {
-	for i := 0; i < len(element); i++ {
-		if element[i] == '*' {
-			return false, errors.New("asterisk occurred")
-		}
+	if element == "*" {
+		return false, errors.New("asterisk occurred")
 	}
 	return true, nil
 }

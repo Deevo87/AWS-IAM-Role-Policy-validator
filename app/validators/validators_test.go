@@ -193,19 +193,19 @@ func TestValidateResources_Execute(t *testing.T) {
 		},
 		{
 			name:        "Valid resources with string",
-			testField:   "resource",
+			testField:   "resource*",
 			expectPass:  true,
 			expectedErr: nil,
 		},
 		{
 			name:        "Invalid resources with asterisk in string array",
-			testField:   []interface{}{"resource1", "resource2", "resource*"},
+			testField:   []interface{}{"resource1", "resource2", "*"},
 			expectPass:  false,
 			expectedErr: errors.New("asterisk occurred"),
 		},
 		{
 			name:        "Invalid resources with asterisk in string",
-			testField:   "resource*",
+			testField:   "*",
 			expectPass:  false,
 			expectedErr: errors.New("asterisk occurred"),
 		},
