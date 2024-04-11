@@ -32,7 +32,7 @@ docker build --tag json-verifier .
 ```
 Run the Docker container
 ```
-docker -p 8080:8080 json-verifier
+docker run -p 8080:8080 json-verifier
 ```
 As above, the application can be found at [`http://localhost:8080/`](http://localhost:8080/)
 
