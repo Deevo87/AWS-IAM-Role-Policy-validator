@@ -1,11 +1,8 @@
 package structures
 
 type Policy struct {
-	PolicyName     string `json:"PolicyName,omitempty"`
-	PolicyDocument struct {
-		Version   string      `json:"Version,omitempty"`
-		Statement []Statement `json:"Statement,omitempty"`
-	} `json:"PolicyDocument,omitempty"`
+	PolicyName     string         `json:"PolicyName,omitempty"`
+	PolicyDocument PolicyDocument `json:"PolicyDocument,omitempty"`
 }
 
 type Statement struct {
@@ -15,4 +12,9 @@ type Statement struct {
 	Action    []string    `json:"Action,omitempty"`
 	Resource  interface{} `json:"Resource,omitempty"` // I used interface{} because Resource may be either string and []string
 	Condition struct{}    `json:"Condition"`
+}
+
+type PolicyDocument struct {
+	Version   string      `json:"Version,omitempty"`
+	Statement []Statement `json:"Statement,omitempty"`
 }

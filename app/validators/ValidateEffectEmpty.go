@@ -16,7 +16,7 @@ func (v *ValidateEffectEmpty) SetNext(validator Validator) {
 func (v *ValidateEffectEmpty) Execute(policy structures.Policy, ind int) (bool, error) {
 	effect := policy.PolicyDocument.Statement[ind].Effect
 	if effect == "" {
-		return false, errors.New("effect is required, it cannot be empty string")
+		return false, errors.New("effect is required, cannot be empty string")
 	}
 	return checkNext(v.next, policy, ind)
 }

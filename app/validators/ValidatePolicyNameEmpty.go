@@ -15,7 +15,7 @@ func (v *ValidatePolicyNameEmpty) SetNext(validator Validator) {
 
 func (v *ValidatePolicyNameEmpty) Execute(policy structures.Policy, ind int) (bool, error) {
 	if policy.PolicyName == "" {
-		return false, errors.New("policy name is required, it cannot be empty")
+		return false, errors.New("policy name is required, cannot be empty")
 	}
 	return checkNext(v.next, policy, ind)
 }

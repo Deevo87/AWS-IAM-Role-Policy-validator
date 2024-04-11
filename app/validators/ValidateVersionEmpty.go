@@ -15,7 +15,7 @@ func (v *ValidateVersionEmpty) SetNext(validator Validator) {
 
 func (v *ValidateVersionEmpty) Execute(policy structures.Policy, ind int) (bool, error) {
 	if policy.PolicyDocument.Version == "" {
-		return false, errors.New("version is required, it cannot be empty")
+		return false, errors.New("version is required, cannot be empty")
 	}
 	return checkNext(v.next, policy, ind)
 }

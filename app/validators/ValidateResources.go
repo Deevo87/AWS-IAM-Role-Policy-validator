@@ -23,7 +23,7 @@ func (v *ValidateResources) Execute(policy structures.Policy, ind int) (bool, er
 					return result, err
 				}
 			} else {
-				return false, errors.New("json file is not valid, elements in resources array are not strings")
+				return false, errors.New("elements in resources array are not strings")
 			}
 		}
 	} else if resStr, ok := resources.(string); ok {
@@ -40,7 +40,7 @@ func (v *ValidateResources) Execute(policy structures.Policy, ind int) (bool, er
 func (v *ValidateResources) checkForAsterisk(element string) (bool, error) {
 	for i := 0; i < len(element); i++ {
 		if element[i] == '*' {
-			return false, errors.New("json file is not valid, asterisk occurred")
+			return false, errors.New("asterisk occurred")
 		}
 	}
 	return true, nil
