@@ -38,7 +38,7 @@ As above, the application can be found at [`http://localhost:8080/`](http://loca
 
 ### Hosted website ###
 You can access the application on the website I hosted. Don't worry if the page doesn't render immediately, it will take a while.
-[`https://json-verifier-latest-tvek.onrender.com/`](https://json-verifier-latest-tvek.onrender.com/)
+[`https://json-verifier.onrender.com/`](https://json-verifier.onrender.com/)
 
 ## How does it work? ##
 The web application is created in the main.go file. When the file is sent for validation, `AppController.go` will check if the file has a `.json` extension, and then a validator will be created. The Validate function in `JsonValidator.go` will decode the file into a preset AWS-IAM-policy structure. In the next step, the validator set is prepared and executed.
